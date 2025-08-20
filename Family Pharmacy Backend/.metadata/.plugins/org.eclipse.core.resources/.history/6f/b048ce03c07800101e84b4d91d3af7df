@@ -1,0 +1,53 @@
+package com.familypharmacy.entities;
+
+public class Product {
+
+	
+	private String pId;
+	private String productBatch;
+	private String productName;
+	private String productDesc;
+	public String getpId() {
+		return pId;
+	}
+	public void setpId(String pId) {
+		this.pId = pId;
+	}
+	public String getProductBatch() {
+		return productBatch;
+	}
+	public void setProductBatch(String productBatch) {
+		this.productBatch = productBatch;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getProductDesc() {
+		return productDesc;
+	}
+	public void setProductDesc(String productDesc) {
+		this.productDesc = productDesc;
+	}
+	public Product(String pId, String productBatch, String productName, String productDesc) {
+		super();
+		this.pId = pId;
+		this.productBatch = productBatch;
+		this.productName = productName;
+		this.productDesc = productDesc;
+	}
+	@Override
+	public String toString() {
+		return "Product [pId=" + pId + ", productBatch=" + productBatch + ", productName=" + productName
+				+ ", productDesc=" + productDesc + "]";
+	}
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+}

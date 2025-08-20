@@ -1,0 +1,32 @@
+
+#Create Product Table
+
+CREATE TABLE `product` (
+  `p_id` varchar(255) NOT NULL,
+  `product_batch` varchar(255) DEFAULT NULL,
+  `product_desc` varchar(255) DEFAULT NULL,
+  `product_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`p_id`)
+)
+
+
+#Create User
+CREATE TABLE `user` (
+  `user_id` bigint NOT NULL,
+  `user_email` varchar(255) DEFAULT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `user_password` varchar(255) DEFAULT NULL,
+  `user_role` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+)
+
+#Create category
+
+CREATE TABLE `category` (
+  `cat_id` bigint NOT NULL,
+  `category_desc` varchar(255) DEFAULT NULL,
+  `category_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`cat_id`)
+)
+
+

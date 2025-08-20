@@ -1,0 +1,62 @@
+package com.familypharmacy.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.familypharmacy.entities.Product;
+
+
+public class ProductServiceImpl implements ProductService {
+	
+	private List<Product> list;
+	
+
+	public ProductServiceImpl() {
+		super();
+		
+		list=new ArrayList<>();
+		Product p1=new Product();
+		p1.setpId(1);
+		p1.setProductBatch("PAR500");
+		p1.setProductName("Paracip 500");
+		p1.setProductDesc("This Product is a medicine and widely used for fevar and pain");
+		list.add(p1);
+		p1=null;
+		
+		p1.setpId(2);
+		p1.setProductBatch("PAR650");
+		p1.setProductName("Paracip 650");
+		p1.setProductDesc("This Product is a medicine and widely used for fevar and pain");
+		list.add(p1);
+		p1=null;
+		
+		p1.setpId(3);
+		p1.setProductBatch("VCK500");
+		p1.setProductName("Vicks Action 500");
+		p1.setProductDesc("This Product is a medicine and widely used for cough, cold,fevar and pain");
+		list.add(p1);
+		p1=null;
+		
+	}
+
+	@Override
+	public List<Product> getAllProduct() {
+		// TODO Auto-generated method stub
+		return list;
+	}
+
+	@Override
+	public Product getProductByBatchNo(String productBatch) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product getProductById(String productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

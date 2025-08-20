@@ -1,0 +1,47 @@
+package com.familypharmacy.controller;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.config.TaskExecutionOutcome.Status;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.familypharmacy.entities.Product;
+import com.familypharmacy.service.ProductService;
+
+@RestController
+@RequestMapping("/family")
+public class PublicController {
+	
+	@Autowired
+	private ProductService productService;
+	
+	@GetMapping("/products")
+	public ResponseEntity<List<Product>> getAllProduct() {
+		
+		
+		return new ResponseEntity(this.productService.getAllProduct(),HttpStatusCode.valueOf(200));
+	}
+	
+	@GetMapping("/products/batch/{pBatch}")
+	public ResponseEntity<List<Product>> getProductByBatch(@PathVariable("pBatch") String productBatch) {
+		
+		System.out.println(productBatch);
+		return new ResponseEntity<>(this.productService.getProductByBatchNo(productBatch),(HttpStatusCode.valueOf(200)));
+	}
+	
+	@GetMapping("/products/id/{pId}")
+	public ResponseEntity<Product> getProductById(@PathVariable("pId") String productId) {
+		
+		System.out.println(productId);
+		return new ResponseEntity<Product>(productService.getProductById(productId),HttpStatusCode.valueOf(200));
+	}
+	
+
+}

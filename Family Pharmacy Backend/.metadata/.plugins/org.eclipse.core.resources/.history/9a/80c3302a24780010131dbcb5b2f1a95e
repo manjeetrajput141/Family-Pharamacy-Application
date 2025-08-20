@@ -1,0 +1,5 @@
+package com.familypharmacy.entities;
+
+public class Product {
+
+}

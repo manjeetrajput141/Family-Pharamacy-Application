@@ -1,0 +1,27 @@
+package com.familypharmacy.service;
+
+import java.util.List;
+
+import com.familypharmacy.entities.Product;
+
+public class ProductServiceImpl implements ProductService {
+
+	@Override
+	public List<Product> getAllProduct() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product getProductByBatchNo(String productBatch) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product getProductById(String productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

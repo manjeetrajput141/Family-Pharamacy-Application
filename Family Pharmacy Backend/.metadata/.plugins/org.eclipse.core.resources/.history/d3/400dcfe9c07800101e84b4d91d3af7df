@@ -1,0 +1,7 @@
+package com.familypharmacy.repo;
+
+
+
+public interface ProductRepository {
+
+}
