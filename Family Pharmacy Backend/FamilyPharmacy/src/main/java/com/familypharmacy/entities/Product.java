@@ -23,7 +23,10 @@ public class Product {
 	private Long pId;
 	private String productBatch;
 	private String productName;
+	private String productQuantity;
 	private String productDesc;
+	private int productPrice;
+	private String imageUrl;
 
 
 

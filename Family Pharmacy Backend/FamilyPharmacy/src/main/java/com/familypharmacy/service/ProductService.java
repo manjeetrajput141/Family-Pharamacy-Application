@@ -21,4 +21,9 @@ public interface ProductService {
 	
 	public void deleteProduct(Long productId);
 
+	public List<Product> getAllMedicines();
+	public List<Product> getAllFoodItems();
+	public List<Product> getAllCosmetics();
+	public List<Product> getAllSuppliments();
+
 }

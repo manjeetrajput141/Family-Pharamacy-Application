@@ -110,6 +110,13 @@ public class ProductServiceImpl implements ProductService {
 		if(product.getProductName()!=null) {
 			p.setProductName(product.getProductName());
 		}
+		if(product.getProductPrice() != p.getProductPrice()){
+			p.setProductPrice(product.getProductPrice());
+
+		}
+		if(product.getProductQuantity() != null){
+			p.setProductQuantity(product.getProductQuantity());
+		}
 		Category c=null;
 		if(categoryId !=0){
 			c=this.categoryService.getCategoryById(categoryId);
@@ -132,6 +139,27 @@ public class ProductServiceImpl implements ProductService {
 			this.productRepository.delete(product.get());
 		}
 		
+	}
+
+	@Override
+	public List<Product> getAllMedicines() {
+
+		return this.productRepository.findByCategoryId(1);
+	}
+
+	@Override
+	public List<Product> getAllFoodItems() {
+		return this.productRepository.findByCategoryId(2);
+	}
+
+	@Override
+	public List<Product> getAllCosmetics() {
+		return this.productRepository.findByCategoryId(4);
+	}
+
+	@Override
+	public List<Product> getAllSuppliments() {
+		return this.productRepository.findByCategoryId(3);
 	}
 
 }

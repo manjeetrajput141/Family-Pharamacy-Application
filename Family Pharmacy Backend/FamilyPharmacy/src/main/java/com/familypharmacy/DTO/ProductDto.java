@@ -15,7 +15,12 @@ public class ProductDto {
 
 
     private Long productId;
+    private String productBatch;
     private String productName;
     private String productDesc;
+    private String productQuantity;
+
+    private String imageUrl;
+    private int productPrice;
     private CategoryDto category;
 }
