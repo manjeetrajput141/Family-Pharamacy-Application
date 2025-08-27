@@ -49,14 +49,14 @@ const Suppliments=()=>{
         return (
             <>
             <ToastContainer/>
-                <h1>All Cosmetics Items</h1>
-                <Button  color="primary" >All  Suppliment Items</Button>
+                <h1>All Suppliments Items</h1>
+                
                 <div>
     
                     {
                         medicine.length > 0 ? medicine.map((item) =>
                             <Product key={counter++} product={item} />
-                        ) : "No Medicine Available"
+                        ) : "No Suppliments Available"
                     }
                 </div>
             </>

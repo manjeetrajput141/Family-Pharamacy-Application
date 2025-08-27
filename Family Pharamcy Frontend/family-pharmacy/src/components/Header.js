@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Col,Row } from "reactstrap";
+import Logout from "./Admin/Logout";
 
 function Header(){
     function changeStyle(){
@@ -9,7 +10,7 @@ function Header(){
     }
     const navigate=useNavigate();
     const homeUrl=()=>{
-        navigate(`/home`);
+        navigate(`/user/home`);
 
     }
     const loginUrl=()=>{
@@ -35,6 +36,12 @@ function Header(){
         <h1 style={{color:"black",textAlign:"center"}}>Family Pharmacy </h1>
         <p className="text-center">Gali No 4,Prakash Nagar,Near Ambedkar gate Khora Colony(Gzb) 201309</p>
         <div style={{textAlign:"right"}}>
+            <nav>
+  <a href="/admin">Admin</a>
+  <a href="/normal">Normal</a>
+  <Logout />
+</nav>
+
             <Button style={{background:"green",padding:10,paddingBlock:10}} onClick={homeUrl}>Home</Button>
             <Button style={{background:"green",padding:10,paddingBlockEnd:10}} onClick={loginUrl}>SignIn</Button>
             <Button style={{background:"green",padding:10,paddingBlockEnd:10}} onClick={signupUrl}>SignUp</Button>

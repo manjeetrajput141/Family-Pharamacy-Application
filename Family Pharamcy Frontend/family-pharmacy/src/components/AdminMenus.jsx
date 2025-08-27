@@ -1,7 +1,8 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ListGroup} from 'reactstrap';
 
-function Menus() {
+const  AdminMenus=()=> {
     return (
        <>
         <ListGroup>
@@ -15,9 +16,7 @@ Add Medicine
 <Link className='list-group-item list-group-item-action' to="/admin/view-medicine">
 Medicine
 </Link>
-<Link className='list-group-item list-group-item-action' to="/user/view-all">
-User View All Products
-</Link>
+
 <Link className='list-group-item list-group-item-action' to="/admin/cosmetics">
 Cosmetics
 </Link>
@@ -36,4 +35,4 @@ Home
        </>
     );
 }
-export default Menus;
+export default AdminMenus;

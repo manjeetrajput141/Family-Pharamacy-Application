@@ -31,11 +31,11 @@ public class UserServiceImpl implements UserService {
         u.setUserEmail(user.getUserEmail());
         u.setUserName(user.getUserName());
         u.setUserPassword(user.getUserPassword());
-        if(u.getUserRole().toLowerCase().equals("admin")){
-            u.setUserRole(user.getUserRole());
+        if(u.getRole().toLowerCase().equals("role_admin")){
+            u.setRole(user.getRole());
             return this.userRepo.save(u);
         }
-        u.setUserRole("normal");
+        u.setRole("normal");
 
         return this.userRepo.save(u);
     }
@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User addUser(User user) {
+
         return this.userRepo.save(user);
     }
 }

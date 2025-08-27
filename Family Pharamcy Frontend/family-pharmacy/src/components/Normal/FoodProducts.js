@@ -54,7 +54,7 @@ const FoodProducts=()=>{
                 {
                     medicine.length > 0 ? medicine.map((item) =>
                         <Product key={counter++} product={item} />
-                    ) : "No Medicine Available"
+                    ) : "No Food Items Available"
                 }
             </div>
         </>

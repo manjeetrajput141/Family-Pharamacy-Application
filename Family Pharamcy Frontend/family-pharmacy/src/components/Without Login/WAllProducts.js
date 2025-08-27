@@ -3,10 +3,11 @@ import { Button } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import base_url from "../../constants/constants";
-import ProductForUser from "./Product";
+import ProductForUser from "./WProduct";
 import { useNavigate } from "react-router-dom";
+import WProductForUser from "./WProduct";
 
-const AllProducts = ({ addToCart, cartItems }) => {
+const WAllProducts = ({ addToCart, cartItems }) => {
   const [medicine, setMedicine] = useState([]);
   const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ const AllProducts = ({ addToCart, cartItems }) => {
     <>
       <ToastContainer />
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h1>All Items</h1>
+        <h1>All Products</h1>
         {/* Cart Button */}
         <Button color="info" onClick={() => navigate("/cart")}>
           🛒 Cart ({cartItems.length})
@@ -41,18 +42,18 @@ const AllProducts = ({ addToCart, cartItems }) => {
       <div>
         {medicine.length > 0 ? (
           medicine.map((item) => (
-            <ProductForUser
+            <WProductForUser
               key={item.productId}
               product={item}
               addToCart={addToCart}
             />
           ))
         ) : (
-          "No Products Available"
+          "No Medicine Available"
         )}
       </div>
     </>
   );
 };
 
-export default AllProducts;
+export default WAllProducts;

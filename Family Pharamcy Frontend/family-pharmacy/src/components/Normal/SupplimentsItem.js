@@ -9,7 +9,7 @@ import Product from "./Product";
 
 
 
-const Suppliments=()=>{
+const SupplimentsItem=()=>{
     var counter=1;
 
     const loadDataFromServer=()=>
@@ -56,11 +56,11 @@ const Suppliments=()=>{
                     {
                         medicine.length > 0 ? medicine.map((item) =>
                             <Product key={counter++} product={item} />
-                        ) : "No Medicine Available"
+                        ) : "No Suppliments Available"
                     }
                 </div>
             </>
         )
     }
    
-export default Suppliments;
+export default SupplimentsItem;

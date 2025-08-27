@@ -4,12 +4,12 @@ import { Button } from "reactstrap";
 import {  ToastContainer,toast } from "react-toastify";
 import axios from "axios";
 import base_url from "../../constants/constants";
-import Product from "./Product";
+import Product from "./WProduct";
 
 
 
 
-const CosmeticItems=()=>{
+const WCosmeticProducts=()=>{
     var counter=1;
 
     const loadDataFromServer=()=>
@@ -57,11 +57,11 @@ const CosmeticItems=()=>{
                     {
                         medicine.length > 0 ? medicine.map((item) =>
                             <Product key={counter++} product={item} />
-                        ) : "No Cosmetic Items Available"
+                        ) : "No Cosmetics Items Available"
                     }
                 </div>
             </>
         )
     }
    
-export default CosmeticItems;
+export default WCosmeticProducts;

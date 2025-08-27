@@ -5,23 +5,27 @@ import { Link } from 'react-router-dom';
 import { ListGroup} from 'reactstrap';
 
 
-function NormalMenus() {
+function LoginMenus() {
     return (
        <>
         <ListGroup>
 
-         <Link className='list-group-item list-group-item-action' to="/all-product">
-         All
+         <Link className='list-group-item list-group-item-action' to="/view-all">
+            All Products    
          </Link>
          <Link className='list-group-item list-group-item-action' to="/view-medicines">
-         Medicine
+         Medicines
          </Link>
+        
          <Link className='list-group-item list-group-item-action' to="/cosmetics">
          Cosmetics
          </Link>
          <Link className='list-group-item list-group-item-action' to="/food-item">
          Food Item
          </Link>
+         <Link className='list-group-item list-group-item-action' to="/suppliments">
+Suppliments
+</Link>
          <Link className='list-group-item list-group-item-action' to="/home">
          Home
          </Link>
@@ -37,4 +41,4 @@ function NormalMenus() {
 
     );
 }
-export default NormalMenus;
+export default LoginMenus;

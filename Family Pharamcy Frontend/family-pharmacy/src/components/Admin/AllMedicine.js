@@ -56,13 +56,13 @@ const AllMedicine = () => {
         <>
         <ToastContainer/>
             <h1>All Items are as follows</h1>
-            <Button  color="primary" >All  Products</Button>
+            {/* <Button  color="primary" >All  Products</Button> */}
             <div>
 
                 {
                     medicine.length > 0 ? medicine.map((item) =>
                         <Product key={item.productId} product={item} update={updateMedicine}/>
-                    ) : "No Medicine Available"
+                    ) : "No Products Available Please Add Some Products!!"
                 }
             </div>
         </>

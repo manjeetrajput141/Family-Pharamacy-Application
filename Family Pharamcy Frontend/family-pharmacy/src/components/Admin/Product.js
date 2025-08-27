@@ -13,7 +13,7 @@ const Product=({product,update})=>
     
     let navigate=useNavigate();
     const routeChange=()=>{
-        let path=`/products/update/${product.productId}`;
+        let path=`/admin/products/update/${product.productId}`;
         
         navigate(path,{state:{id:product.productId,name:product.productName,
             batch:product.productBatch,desc:product.productDesc,

@@ -4,17 +4,18 @@ import { Button } from "reactstrap";
 import {  ToastContainer,toast } from "react-toastify";
 import axios from "axios";
 import base_url from "../../constants/constants";
-import Product from "./Product";
+import Product from "./WProduct";
+import WProductForUser from "./WProduct";
 
 
 
 
-const CosmeticItems=()=>{
+const WSuppliments=()=>{
     var counter=1;
 
     const loadDataFromServer=()=>
         {
-            axios.get(`${base_url}/family/products/cosmetics`).then
+            axios.get(`${base_url}/family/products/suppliments`).then
             ((response)=>
             {
                 // console.log(response.data);
@@ -49,19 +50,18 @@ const CosmeticItems=()=>{
         return (
             <>
             <ToastContainer/>
-            
-                <h1>All Cosmetics Items</h1>
-                <Button  color="primary" >All  Cosmetics Items</Button>
+                <h1>All Suppliments Items</h1>
+                
                 <div>
     
                     {
                         medicine.length > 0 ? medicine.map((item) =>
-                            <Product key={counter++} product={item} />
-                        ) : "No Cosmetic Items Available"
+                            <WProductForUser key={counter++} product={item} />
+                        ) : "No Suppliments Available"
                     }
                 </div>
             </>
         )
     }
    
-export default CosmeticItems;
+export default WSuppliments;

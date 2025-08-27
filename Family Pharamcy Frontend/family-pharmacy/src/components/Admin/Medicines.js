@@ -48,7 +48,7 @@ const Medicines=()=>{
             <>
             <ToastContainer/>
                 <h1>All Medicines are as follows</h1>
-                <Button  color="primary" >All  Medicine</Button>
+                {/* <Button  color="primary" >All  Medicine</Button> */}
                 <div>
     
                     {

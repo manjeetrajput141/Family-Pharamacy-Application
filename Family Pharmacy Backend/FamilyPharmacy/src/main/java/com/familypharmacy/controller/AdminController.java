@@ -18,7 +18,7 @@ import java.util.UUID;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/admin/")
+@RequestMapping("/admin/family/user")
 public class AdminController {
 
     @Autowired
@@ -26,34 +26,36 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/family/user/all")
+    @GetMapping("/all")
     public ResponseEntity<List<User>> getAllUser(){
 
         return ResponseEntity.status(HttpStatus.OK).body(userService.getAllUser());
     }
 
-    @GetMapping("/family/user/{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<User> getUserById(@PathVariable String userId){
 
         return new ResponseEntity<>(userService.getUserById(userId),HttpStatus.OK);
     }
 
-    @PostMapping("/family/user/add")
+    @PostMapping("/add")
     public ResponseEntity<User> addUser(@RequestBody User user){
 
         user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
         String userId= String.valueOf(UUID.randomUUID());
         user.setUserId(userId);
-        user.setUserRole("Normal");
+        if(user.getRole().isEmpty()) {
+            user.setRole("USER");
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(this.userService.addUser(user));
     }
 
-    @PutMapping("/family/user/update/{userId}")
+    @PutMapping("/update/{userId}")
     public ResponseEntity<User> updateUser(@PathVariable String userId,@RequestBody User user){
 
         return new ResponseEntity<>(this.userService.updateUser(userId,user), HttpStatus.OK);
     }
-    @DeleteMapping("/family/user/delete/{userId}")
+    @DeleteMapping("/delete/{userId}")
     public ResponseEntity<ApiResponse> deleteUser(@PathVariable String userId){
         return ResponseEntity.status(HttpStatus.OK).body(ApiResponse.builder().message("User Deleted successfully with id "+userId)
                 .status(HttpStatus.OK).success(true).build());

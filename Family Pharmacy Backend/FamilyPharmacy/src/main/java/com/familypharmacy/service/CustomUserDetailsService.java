@@ -2,7 +2,7 @@ package com.familypharmacy.service;
 
 import com.familypharmacy.entities.User;
 import com.familypharmacy.repo.UserRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -10,25 +10,24 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
-    @Autowired
-    private UserRepo userRepo;
 
-    public CustomUserDetailsService(UserRepo userRepo) {
-        this.userRepo = userRepo;
+    private final UserRepo userRepository;
+
+    public CustomUserDetailsService(UserRepo userRepository) {
+
+        this.userRepository = userRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepo.findByUserEmail(username);
-        System.out.println("User Load from db and return to");
-        if(user==null){
-            System.out.println("User is null");
-        }
-        System.out.println("User  :"+user.toString());
-        return org.springframework.security.core.userdetails.User.builder()
-                .username(user.getUserEmail())
-                .password(user.getUserPassword()) // must be encoded
-                .roles(user.getUserRole())        // expects ROLE_ prefix
+        User user = userRepository.findByUserEmail(username);
+
+
+        // Spring Security User object
+        return org.springframework.security.core.userdetails.User
+                .withUsername(user.getUserEmail())
+                .password(user.getUserPassword())  // should already be BCrypt encoded
+                .roles(user.getRole().replace("ROLE_", "")) // ensure role format
                 .build();
     }
 }

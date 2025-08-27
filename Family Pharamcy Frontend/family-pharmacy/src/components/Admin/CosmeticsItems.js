@@ -50,13 +50,13 @@ const CosmeticItems=()=>{
             <>
             <ToastContainer/>
                 <h1>All Cosmetics Items</h1>
-                <Button  color="primary" >All  Cosmetics Items</Button>
+                {/* <Button  color="primary" >All  Cosmetics Items</Button> */}
                 <div>
     
                     {
                         medicine.length > 0 ? medicine.map((item) =>
                             <Product key={counter++} product={item} />
-                        ) : "No Medicine Available"
+                        ) : "No Cosmetic Items Available"
                     }
                 </div>
             </>

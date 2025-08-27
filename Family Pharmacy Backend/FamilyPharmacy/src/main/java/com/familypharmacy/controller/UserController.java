@@ -44,7 +44,7 @@ public class UserController {
 //        user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
 //        String userId= String.valueOf(UUID.randomUUID());
 //        user.setUserId(userId);
-//        user.setUserRole("Normal");
+//        user.setRole("ROLE_USER");
 //        return ResponseEntity.status(HttpStatus.CREATED).body(this.userService.addUser(user));
 //    }
 

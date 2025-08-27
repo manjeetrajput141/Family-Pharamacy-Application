@@ -4,11 +4,11 @@ import { Button } from "reactstrap";
 import {  ToastContainer,toast } from "react-toastify";
 import axios from "axios";
 import base_url from "../../constants/constants";
-import Product from "./Product";
+import Product from "./WProduct";
 
 
 
-const FoodItems=()=>{
+const WFoodProducts=()=>{
     var counter=1;
     const loadDataFromServer=()=>
     {
@@ -61,4 +61,4 @@ const FoodItems=()=>{
     )
 }
 
-export default FoodItems;
+export default WFoodProducts;
